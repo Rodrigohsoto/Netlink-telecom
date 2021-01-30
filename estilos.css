@@ -1,0 +1,282 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #000;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+ul{
+    list-style: none;
+}
+
+.contenedor{
+    width: 90%;
+    margin: auto;
+}
+
+/* navegacion */
+.menubar{
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+}
+
+/* menu bar derecha */
+.menubar ul{
+    display:flex;
+}
+
+.menubar ul li{
+    padding: 10px;
+}
+
+.menubar ul li a:hover{
+    border-bottom: 2px solid cornflowerblue;
+}
+
+.menubar ul.navmenu{
+    flex: 1;
+    margin-left: 20px;
+}
+
+.menuboton{
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 30px;
+    z-index:2;
+    font-size: 2rem;
+    display: none;
+}
+
+/*Logo*/
+.logo2{
+    color: cornflowerblue;
+}
+
+/*BAnner*/
+.banner{
+    width: 100%;
+    height: 550px;
+    background: url(img/banner3.jpg) no-repeat center center/cover;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    color: #000;
+}
+hr{
+    margin-bottom: 20px;
+}
+
+.boton{
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: #ffffff;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.boton:hover{
+    opacity: .7;
+}
+
+.banner h2, .banner p{
+    margin: 1px;
+}
+
+/*Noticias*/
+.noticias{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.noticias img{
+    width: 100%;
+    height: 180px;
+}
+
+.noticias h3{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.noticias a{
+    padding: 10px 0;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+}
+.noticias a:hover{
+    text-decoration: underline;
+}
+
+/*Banner 2*/
+.banner2{
+    width: 100%;
+    height: 350px;
+    background: url(img/banner2.jpg) no-repeat center center/cover;
+    margin-bottom: 40px;
+}
+
+.banner2 .info2{
+    width: 40%;
+    padding: 100px 0 0 30px;
+    color: #ffffff;
+}
+
+.banner2 p,
+.banner2 h2{
+    margin: 10px 0 20px 0;
+}
+
+/*Banner3*/
+.banner3{
+    width: 100%;
+    height: 350px;
+    background: url(img/banner1.jpg) no-repeat center center/cover;
+    margin-bottom: 40px; 
+}
+
+.banner3 .info3{
+    width: 40%;
+    padding: 100px 0 0 30px;
+    color: #ffffff;
+}
+
+.banner3 p,
+.banner3 h2{
+    margin: 10px 0 20px 0;
+}
+
+/* Redes Sociales */
+.social{
+    margin: 50px;
+}
+
+.social p{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.links{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.links a{
+    margin: 0 30px;
+}
+
+.links a i{
+    font-size: 3rem;
+}
+
+/* footer */
+
+.footer{
+    background:cornflowerblue;
+    font-size: 12px;
+    padding: 35px 0;
+}
+
+.contenedorf{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: flex-start;
+    text-align: center;
+    gap: 10px;
+}
+
+.contenedorf ul li{
+    line-height: 2;
+}
+
+.copy{
+    background: cornflowerblue;
+    font-size: 12px;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+@media(max-width: 700px){
+    .menuboton{
+        display: block;
+    }
+
+    .menubar ul.navmenu{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #262626;
+        height: 100%;
+        transform: translateX(-400px);
+        transition: transform .3s ease-in-out;
+        padding: 30px;
+        opacity: .9;
+    }
+
+    .menubar ul.navmenu.show{
+        transform:translateX(-20px);
+    }
+
+    .menubar ul.navmenur{
+        margin-right: 50px;
+    }
+
+    .noticias{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .banner2 .info2,
+    .banner3 .info3{
+        width: 80%;
+    }
+
+    .footer .contenedorf{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 500px){
+    .noticias{
+        grid-template-columns: 1fr;
+    }
+
+    .banner2 .info2,
+    .banner3 .info3{
+        width: 100%;
+        padding: 60px 20px;
+    }
+    .footer .contenedorf{
+        grid-template-columns: 1fr;
+    }
+}
